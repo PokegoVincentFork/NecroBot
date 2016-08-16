@@ -25,6 +25,12 @@ using POGOProtos.Inventory.Item;
 
 namespace PoGo.NecroBot.Logic
 {
+    public class SlackConfig
+    {
+        public bool UseSlackWebhook;
+        public string WebHookURL;
+        public string SlackChannel;
+    }
     public class AuthConfig
     {
         public AuthType AuthType;
@@ -459,6 +465,7 @@ namespace PoGo.NecroBot.Logic
         public WebsocketsConfig WebsocketsSettings = new WebsocketsConfig();
         public LocationConfig LocationSettings = new LocationConfig();
         public TelegramConfig TelegramSettings = new TelegramConfig();
+        public SlackConfig SlackSettings = new SlackConfig();
         public GPXConfig GPXSettings = new GPXConfig();
         public SnipeConfig SnipingSettings = new SnipeConfig();
         public PokemonConfig PokemonSettings = new PokemonConfig();

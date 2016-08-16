@@ -159,7 +159,12 @@ namespace PoGo.NecroBot.CLI
                 var websocket = new WebSocketInterface(settings.WebsocketsSettings.WebSocketPort, session);
                 session.EventDispatcher.EventReceived += evt => websocket.Listen(evt, session);
             }
-            
+            if (settings.SlackSettings.UseSlackWebhook)
+            {
+                var slackListener = new slackLoggerListener(settings.SlackSettings.WebHookURL, settings.SlackSettings.SlackChannel);
+                session.EventDispatcher.EventReceived += evt => slackListener.Listen(evt, session);
+            }
+
             ProgressBar.fill(70);
 
             machine.SetFailureState(new LoginState());
