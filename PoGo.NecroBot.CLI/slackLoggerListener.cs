@@ -16,8 +16,8 @@ namespace PoGo.NecroBot.CLI
     [SuppressMessage("ReSharper", "UnusedParameter.Local")]
     public class slackLoggerListener
     {
-        
 
+        private static string botName = "Francis";
         private static string webhookURL, channel;
         public slackLoggerListener(string p_webhook, string p_channel)
         {
@@ -37,7 +37,7 @@ namespace PoGo.NecroBot.CLI
                 Channel = channel,
                 Text = message,
                 IconEmoji = ":nerd_face:",
-                Username = "pokeBotInfo"
+                Username = botName +"Info"
             };
 
             SlackAttachment slackAttachment;
@@ -47,7 +47,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Error:
                     slackMessage.Text = "uh oh! I'm in trouble!";
                     slackMessage.IconEmoji = Emoji.Scream;
-                    slackMessage.Username = "pokeBotError";
+                    slackMessage.Username = botName +"Error";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -58,7 +58,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Warning:
                     slackMessage.Text = "this is a warning...";
                     slackMessage.IconEmoji = ":thinking_face:";
-                    slackMessage.Username = "pokeBotWarning";
+                    slackMessage.Username = botName +"Warning";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -73,7 +73,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Pokestop:
                     slackMessage.Text = "made it to another pokestop!";
                     slackMessage.IconEmoji = Emoji.Blush;
-                    slackMessage.Username = "pokeBotLootingStop";
+                    slackMessage.Username = botName +"LootingStop";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -92,7 +92,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Recycling:
                     slackMessage.Text = "";
                     slackMessage.IconEmoji = ":recycle:";
-                    slackMessage.Username = "pokeBotRecycling";
+                    slackMessage.Username = botName +"Recycling";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -103,7 +103,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Caught:
                     slackMessage.Text = "I caught the guy!";
                     slackMessage.IconEmoji = Emoji.Laughing;
-                    slackMessage.Username = "pokeBotCaught";
+                    slackMessage.Username = botName +"Caught";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -114,7 +114,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Flee:
                     slackMessage.Text = "he's getting away from me!";
                     slackMessage.IconEmoji = ":anguished:";
-                    slackMessage.Username = "pokeBotStruggling";
+                    slackMessage.Username = botName +"Struggling";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -125,7 +125,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Transfer:
                     slackMessage.Text = @"I'm /'transfering/' pokemon. Not putting them in a blender";
                     slackMessage.IconEmoji = Emoji.Smirk;
-                    slackMessage.Username = "pokeBotTransfering";
+                    slackMessage.Username = botName +"Transfering";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -136,7 +136,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Evolve:
                     slackMessage.Text = @"Oh shit dat evolve";
                     slackMessage.IconEmoji = Emoji.Frog;
-                    slackMessage.Username = "pokeBotEvolving";
+                    slackMessage.Username = botName +"Evolving";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -148,7 +148,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Berry:
                     slackMessage.Text = "Deploying tasty berries";
                     slackMessage.IconEmoji = Emoji.Cherries;
-                    slackMessage.Username = "pokeBotBerries";
+                    slackMessage.Username = botName +"Berries";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -159,7 +159,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.Egg:
                     slackMessage.Text = "I <3 eggs";
                     slackMessage.IconEmoji = Emoji.KissingSmilingEyes;
-                    slackMessage.Username = "pokeBotEggKeeping";
+                    slackMessage.Username = botName +"EggKeeping";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -182,7 +182,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.SoftBan:
                     slackMessage.Text = "SOFT BAN DETECTED";
                     slackMessage.IconEmoji = Emoji.Confounded;
-                    slackMessage.Username = "pokeBotSoftBanned";
+                    slackMessage.Username = botName +"SoftBanned";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
@@ -193,7 +193,7 @@ namespace PoGo.NecroBot.CLI
                 case LogLevel.LevelUp:
                     slackMessage.Text = "The XP must flow";
                     slackMessage.IconEmoji = Emoji.Star;
-                    slackMessage.Username = "pokeBotLeveledUp";
+                    slackMessage.Username = botName +"LeveledUp";
                     slackAttachment = new SlackAttachment
                     {
                         Text = message,
