@@ -764,10 +764,11 @@
       "Value": "KillSwitch: Catch success state {0}/{1}"
     },
     {
-      "Key": "CatchErrorStart",
-      "Value": "KillSwitch: Catch error started {0}/{1}"
+      "Key": "RequestHumanDistance",
+      "Value": "Request human distance of pokestops..."
     },
     {
+<<<<<<< HEAD
       "Key": "CatchEscapeStart",
       "Value": "KillSwitch: Catch escape started {0}/{1}"
     },
@@ -782,6 +783,10 @@
     {
       "Key": "CatchSuccessStart",
       "Value": "KillSwitch: Catch success started {0}/{1}"
+>>>>>>> refs/remotes/NoxxDev/master
+=======
+      "Key": "CalculatingNextPokestop",
+      "Value": "Calculating next pokestop..."
 >>>>>>> refs/remotes/NoxxDev/master
     }
   ],

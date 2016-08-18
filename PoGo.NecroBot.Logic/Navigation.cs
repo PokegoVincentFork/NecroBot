@@ -174,6 +174,10 @@ namespace PoGo.NecroBot.Logic
 
                     UpdatePositionEvent?.Invoke(waypoint.Latitude, waypoint.Longitude);
 
+                    var realDistanceToTarget = LocationUtils.CalculateDistanceInMeters(sourceLocation, targetLocation);
+                    if (realDistanceToTarget < 30)
+                        break;
+
                     do
                     {
                         cancellationToken.ThrowIfCancellationRequested();
@@ -184,7 +188,8 @@ namespace PoGo.NecroBot.Logic
                         sourceLocation = new GeoCoordinate(_client.CurrentLatitude, _client.CurrentLongitude);
                         var currentDistanceToTarget = LocationUtils.CalculateDistanceInMeters(sourceLocation, points.ToArray()[i]);
 
-                        if (currentDistanceToTarget < 40)
+                        var realDistanceToTargetSpeedDown = LocationUtils.CalculateDistanceInMeters(sourceLocation, targetLocation);
+                        if (realDistanceToTargetSpeedDown < 40)
                             if (speedInMetersPerSecond > SpeedDownTo)
                                 speedInMetersPerSecond = SpeedDownTo;
 
