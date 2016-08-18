@@ -19,13 +19,13 @@ namespace PoGo.NecroBot.CLI
 
         private static string botName = "Francis";
         private static string webhookURL, channel;
-        public slackLoggerListener(string p_webhook, string p_channel)
+        public slackLoggerListener(string p_webhook, string p_channel, string p_name)
         {
 
             //var settings = p_seesion.LogicSettings;
             webhookURL = p_webhook;
             channel = p_channel;
-
+            botName = p_name;
 
         }
 

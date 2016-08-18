@@ -30,6 +30,7 @@ namespace PoGo.NecroBot.Logic
         public bool UseSlackWebhook;
         public string WebHookURL;
         public string SlackChannel;
+        public string botname;
     }
     public class AuthConfig
     {

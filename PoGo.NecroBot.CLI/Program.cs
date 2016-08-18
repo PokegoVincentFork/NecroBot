@@ -161,7 +161,7 @@ namespace PoGo.NecroBot.CLI
             }
             if (settings.SlackSettings.UseSlackWebhook)
             {
-                var slackListener = new slackLoggerListener(settings.SlackSettings.WebHookURL, settings.SlackSettings.SlackChannel);
+                var slackListener = new slackLoggerListener(settings.SlackSettings.WebHookURL, settings.SlackSettings.SlackChannel, settings.SlackSettings.botname);
                 session.EventDispatcher.EventReceived += evt => slackListener.Listen(evt, session);
             }
 
